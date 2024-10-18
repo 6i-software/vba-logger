@@ -16,13 +16,30 @@ VBA Logger
 
 **Main features:**
 
-- **Verbosity levels**: Control the granularity of logs by adjusting the verbosity level, from critical errors to detailed debug information, according to the `LogVerbosityLevel` enumeration.
+- **Verbosity levels**: Control the granularity of logs by adjusting the verbosity level, from critical errors to detailed debug information. The current verbosity level is set using the `LogVerbosityLevelSession` property, which corresponds to the values of the `LogVerbosityLevel` enumeration.
+
+  | **Level** | **Description**                                      |
+  |-----------|------------------------------------------------------|
+  | Error     | Logs runtime errors.                                 |
+  | Warning   | Logs exceptional occurrences that are not errors.    |
+  | Log       | Normal logs for general purposes.                    |
+  | Notice    | Logs significant events.                             |
+  | Info      | Logs interesting events, useful for understanding.   |
+  | Trace     | Logs detailed debug information for troubleshooting. |
 
 
 - **Each log entry is prefixed with the type of message** (*e.g.*, `[ERROR]`, `[WARNING]`, etc.), except for general "Log" entries, which have no prefix. This helps in quickly identifying the type and severity of the log entry.
 
 
-- **Configure log output**: You can choose to send logs to the VBA console (Excel's immediate Windows), a file, or both. And also defines the log file's name and folder. The logger allows you to specify a custom log file name and storage folder. If the folder does not exist, the logger will create it recursively, ensuring that the file can be saved without manual folder creation.
+- **Configure log output**: By default, logs are displayed only in the VBA console (Excel's immediate window). You can change their destination using the `LogOutputSession` property according to the values of the `LogOutput` enumeration. 
+
+  | **Log output** | **Description**                               |
+  |----------------|-----------------------------------------------|
+  | Console        | Logs are sent to the VBA immediate window.    |
+  | File           | Logs are written to a file.                   |
+  | All            | Logs are sent both to the console and a file. |  
+
+  Logs can be sent to the VBA console, a file, or both. The logger also allows you to choose a name and folder for the log file. If the folder (and its subfolders) does not exist, the logger will create it automatically.
 
 
 - **Contextual logging to simplify debugging of complex variables**: At the trace level, you can add extra context to your logs, such as collections or objects. This approach improves debugging and issue tracking by providing deeper insights into variable values.
@@ -31,36 +48,36 @@ VBA Logger
 - **Add a customizable splashscreen**: A customizable splashscreen can be shown at the beginning of a logging session, providing a visual confirmation that logging is initialized. This can be turned off as needed.
 
 
-### Verbosity levels
-
-VBALogger allows logging at different verbosity levels to suit different priorities. The levels are defined in the `LogVerbosityLevelSession` property according to the `LogVerbosityLevel` enumeration, ranging from critical errors to detailed debug information:
-
-| **Level** | **Description**                                      |
-|-----------|------------------------------------------------------|
-| Error     | Logs runtime errors.                                 |
-| Warning   | Logs exceptional occurrences that are not errors.    |
-| Log       | Normal logs for general purposes.                    |
-| Notice    | Logs significant events.                             |
-| Info      | Logs interesting events, useful for understanding.   |
-| Trace     | Logs detailed debug information for troubleshooting. |
-
-
-### Where logs are written
-
-By default, log entries are shown only in VBA console (Excel's immediate Window). The log output can be configured based on the desired destination using the `LogOutputSession` property with the values of `LogOutput` enumeration. Logs can be sent to the VBA console, to a file, or to both:
-
-| **Output option** | **Description**                               |
-|-------------------|-----------------------------------------------|
-| Console           | Logs are sent to the VBA immediate window.    |
-| File              | Logs are written to a file.                   |
-| All               | Logs are sent both to the console and a file. |
-
-When you opt to log output to a file, the logs are saved by default in the `./var/log/` directory of the workbook path, and by using the pattern filename `logfile_2024-10-17.log`, but you can also change it.
-
 
 ## Documentation
 
-Please refer to the [documentation](./documentation%2F1%20-%20Getting%20started.md) for details on how to install and use VBA Logger.
+Please refer to the documentation for details on how to use VBA Logger and its features.
+
+- [Getting started with VBA Logger](documentation%2F1%20-%20Getting%20started.md)
+- [API documentation](documentation%2F2%20-%20API%20documentation.md)
+
+
+
+## Installation
+
+VBA Logger supports several installation methods :
+
+- by importing the class module VBALoggerClass in your VBA project. 
+    
+    > In this case, the class module `VBALoggerClass` is set to `Private` and can only be accessed within the project where it is defined or imported, ensuring encapsulation and preventing external code from directly interacting with it. To utilize the logger functionality, the developer must instantiate the class within their own procedures, allowing for controlled access to its methods and properties.
+  
+
+- by reference the XLAM VBALogger in your VBA project.
+
+    > If you want to use the logger into multilples VBA project, you should use the VBA Logger XLAM. In this case, the class module `VBALoggerClass` is set to `PublicNotCreatable` and the developer use a factory method `VBALogger.Factory.Create` to obtain an instance of the logger.
+
+
+- *by using the installer (Windows setup) - ***not yet, working in progress****
+
+    > Use this solution in order to make easy installation and deployment of VBA Logger XLAM.
+  
+You can find the detailed instructions for each installation method in the documentation of [VBALogger Installation](documentation%2F1%20-%20Getting%20started.md#installation). You should consult it for the simplest setup experience.
+
 
 
 ## About
