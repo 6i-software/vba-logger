@@ -1,0 +1,9 @@
+
+=== VBA Logger - version 1.0.0 ===
+
+This is a normal log message.
+[ERROR]   | 2024-10-17 16:59:42 | This message indicates an error.
+[WARNING] | 2024-10-17 16:59:42 | This is a warning message.
+[NOTICE]  | 2024-10-17 16:59:42 | This is a significant event notice.
+[INFO]    | 2024-10-17 16:59:42 | This is an informational message.
+[TRACE]   | 2024-10-17 16:59:42 | This is a debug message, useful for troubleshooting.
