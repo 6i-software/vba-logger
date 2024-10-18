@@ -85,7 +85,7 @@ You can find the detailed instructions for each installation method in the docum
 
 **VBA Logger** is free and open source under the [MIT License](./LICENSE), but if you want to support me, you can [offer me a coffee here](https://www.buymeacoffee.com/vincent.blain) or by scanning this QR code. Thank you in advance for your assistance (and your appreciation) for this work ^^.
 
-<img alt="Buy me a coffee ?" src="./documentation%2Fassets%2Fv20100v_buy-me-a-coffee_qrcode.png" width="300" height="300" />
+<a href="https://www.buymeacoffee.com/vincent.blain"><img alt="Buy me a coffee ?" src="./documentation%2Fassets%2Fv20100v_buy-me-a-coffee_qrcode.png" width="300" height="300" /></a>
 
 
 ### Want to contribute ?
