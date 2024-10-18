@@ -1,9 +1,7 @@
 VBA Logger
 ==========
 
-> Welcome to the VBA Logger documentation !
->
-> This page will provide you with an introduction to this logger, including installation instructions and usage guidelines.
+> Welcome to the VBA Logger documentation ! This page will provide you with an introduction to this logger, including installation instructions and usage guidelines.
 
 
 ## Getting started
@@ -12,10 +10,10 @@ VBA Logger
 
 Before getting started with **VBA Logger**, ensure the following prerequisites are met:
 
-1. **Excel Version** : You should have Microsoft Excel installed on your system, preferably Excel 2010 or newer, as older versions may not fully support this module.
+1. **Excel version** : You should have Microsoft Excel installed on your system, preferably Excel 2010 or newer, as older versions may not fully support this module.
 
 
-2. **VBA enabled workbook**: Your Excel workbook should support VBA macros, such as `.xlsm` (macro-enabled workbook) or `.xlsb` (binary workbook with macros). And make sure VBA macros are enabled in your Excel settings to execute the tests.
+2. **VBA enabled in your workbook**: Your workbook should support VBA macros, such as `.xlsm` (macro-enabled workbook) or `.xlsb` (binary workbook with macros). And make sure VBA macros are enabled in your Excel settings to execute the tests.
 
    > - Go to Trust Center Settings *File* > *Options* > *Trust Center* > *Trust Center Settings*.
    > - Under Macro Settings, select Disable all macros with notification (recommended) or Enable all macros (for full access).
@@ -24,14 +22,14 @@ Before getting started with **VBA Logger**, ensure the following prerequisites a
 
 ### Installation 
 
-#### Fetch VBA Logger files
+#### Download VBA Logger
 
-First, obtain the VBA Logger files from the repository or download archive zip provided by the project. You should get:
+First, obtain the VBA Logger setup file (not yet available), clone the project or download archive zip from the repository. You should get:
 
- - `6i_VBALogger.xlam`: This is the Excel Macro-Enabled Add-In file of VBA Logger that developers can load through Excel’s settings. Once loaded, it grants access to logger that can be utilized across all VBA projects. In this case, the VBALoggerClass must be set to `PublicNotCreatable`.
+ - `6i_VBALogger.xlam`: This is the Excel Macro-Enabled Add-In file of VBA Logger that developers can load through Excel’s settings. Once referenced, it grants access to logger that can be utilized across all VBA projects.
 
 
- - `VBALoggerClass.cls`: Developers can import this class module directly into their existing VBA projects. In this case, the VBALoggerClass can be set to `Private`.
+ - `VBALoggerClass.cls`: Developers can import this class module directly into their existing VBA projects. 
 
 
 #### Install "VBA Logger" by importing the class module
@@ -51,7 +49,8 @@ Note that in this scenario, the **VBALoggerClass** has been set to `private` and
    > - Go to *File* > *Import File* 
    > - Select the **VBALoggerClass.cls** class modules to import into your VBA project.
    > - Ensure that the class module visibility is set to `Private`.
-   >   <br/><br/>![import_VBALoggerClass.png](assets%2Fimport_VBALoggerClass.png)
+   > 
+   >   ![import_VBALoggerClass.png](assets%2Fimport_VBALoggerClass.png)
 
    That's it ! You are now ready to use **VBALoggerClass**. 
 
@@ -65,12 +64,14 @@ But you have a second scenario available, when the **VBALoggerClass** is configu
 
 
 2. Add the `6i_VBALogger.xlam` file as a Reference in your VBA Project
+
    ![reference_VBALogger_xlam.png](assets%2Freference_VBALogger_xlam.png)
 
-   <br/>You should see this reference in the VBA editor:
+   You should see this reference in the VBA editor:
+
    ![see_reference_VBALogger_xlam.png](assets%2Fsee_reference_VBALogger_xlam.png)
 
-   <br/>That's it ! You are now ready to use the **VBA Logger** by its factory method.
+   That's it ! You are now ready to use the **VBA Logger** by its factory method.
 
 
 ## Usages
@@ -104,7 +105,7 @@ When you opt to log output to a file, the logs are saved by default in the `./va
 
 ### Logging a message
 
-"To log a message, you need to create a logger as a new instance of `VBALoggerClass`, and this depends on the type of installation you have chosen: either by importing the class module or by referencing the VBALogger XLAM.
+To log a message, you need to create a logger as a new instance of `VBALoggerClass`, and this depends on the type of installation you have chosen: either by importing the class module or by referencing the VBALogger XLAM.
 
 
 #### Instantiate a logger when installing by importing the VBALoggerClass module
@@ -162,6 +163,7 @@ End Sub
 ```
 
 You can see result in the VBA console.
+
 ![output_result_in_VBA_console.png](assets%2Foutput_result_in_VBA_console.png)
 
 > **Note**: By default, log entries are shown only in VBA console (Excel's immediate Window). If it is not visible go to the menu and select *View* > *Immediate Window*. Alternatively, you can press <kbd>Ctrl + G</kbd> to quickly open the VBA console.
@@ -275,7 +277,7 @@ End Sub
 
 ### Debug instance of VBALoggerClass
 
-VBALoggerClass implements a `ToString` method, in order to output a string representation fo the logger instance with key property values for debugging.
+VBALoggerClass implements a `ToString` method, in order to output a string representation of the logger instance with key property values for debugging.
 
 ```vba
 Sub Test_ToString_VBALogger()
