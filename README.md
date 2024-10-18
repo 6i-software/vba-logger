@@ -1,8 +1,7 @@
 VBA Logger
 ==========
-
-[![Support me by offer me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-donate-informational.svg)](https://www.buymeacoffee.com/vincent.blain)
-
+[![LICENSE](https://img.shields.io/badge/license-MIT-informational.svg)](https://github.com/v20100v/6i-Jekyll/blob/develop/LICENSE.md)
+&nbsp;[![Want to support me? Offer me a coffee!](https://img.shields.io/badge/Want%20to%20support%20me%3F%20Offer%20me%20a%20coffee%21-donate-informational.svg)](https://www.buymeacoffee.com/vincent.blain)
 
 > A simple VBA logging utility for tracking messages with customizable log levels and output options. 
 
@@ -12,7 +11,7 @@ VBA Logger
 **VBA Logger** is a logging system designed to track and record events or messages within a VBA (Visual Basic for Applications) application. It supports logging messages with different levels of severity and can output logs either to the VBA console or to a specific log file. It supports also allows for customization, such as adjusting log verbosity, customizing the log output location, and more.
 
 ![VBALogger-output-all.png](./documentation%2Fassets%2FVBALogger-output-all.png)
-<small>*VBA Logger - Simultaneously output to the VBA Console (also known as Excel's Immediate Window) and to a log file.*</small>
+<small>*VBA Logger &mdash; Output logs simultaneously to the VBA console and a file.*</small>
 
 **Main features:**
 
@@ -82,21 +81,21 @@ You can find the detailed instructions for each installation method in the docum
 
 ## About
 
-### Support
+### Want to support me ? Offer me a coffee !
 
-**VBA Logger** is free and open source under the [MIT License](./LICENSE), but if you want to support me, you can [offer me a coffee here](https://www.buymeacoffee.com/vincent.blain) or by scanning this QR code.
+**VBA Logger** is free and open source under the [MIT License](./LICENSE), but if you want to support me, you can [offer me a coffee here](https://www.buymeacoffee.com/vincent.blain) or by scanning this QR code. Thank you in advance for your assistance (and your appreciation) for this work ^^.
 
 <img alt="Buy me a coffee ?" src="./documentation%2Fassets%2Fv20100v_buy-me-a-coffee_qrcode.png" width="300" height="300" />
 
 
-### Contributing
+### Want to contribute ?
 
 Bug reports, reports a typo in documentation, comments, pull-request & Github stars are always welcome !
 
 
 ### Releases
 
-- VBA Logger v1.0.0 - 2024.10.17
+- VBA Logger v1.0.0 - 2024.10.18
 
 
 ### License
